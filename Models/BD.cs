@@ -1,9 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using Microsoft.Data.SqlClient;
-using System.Collections.Generic;
+using Dapper;
 
 
 namespace TuProyecto.Models
@@ -12,66 +8,47 @@ namespace TuProyecto.Models
     {
         private static string connectionString = @"Server=(localdb)\MSSQLLocalDB;Database=PreguntadosDB;Trusted_Connection=True;";
 
-        // Método para obtener preguntas con sus respuestas
-        public static List<Pregunta> GetPreguntas(int cantidad = 5)
+        public List<categoria> ObtenerCategorias()
         {
-            List<Pregunta> preguntas = new List<Pregunta>();
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            List<categoria> categorias = new List<categoria>();
+            using(SqlConnection connection = new SqlConnection(_connectionString))
             {
-                string query = $@"
-                    SELECT TOP {cantidad} p.IdPregunta, p.Texto, r.IdRespuesta, r.Texto AS RespuestaTexto, r.EsCorrecta
-                    FROM Preguntas p
-                    INNER JOIN Respuestas r ON p.IdPregunta = r.IdPregunta
-                    ORDER BY NEWID()"; 
-
-                SqlCommand cmd = new SqlCommand(query, conn);
-                conn.Open();
-
-                using (SqlDataReader dr = cmd.ExecuteReader())
-                {
-                    Dictionary<int, Pregunta> mapPreguntas = new Dictionary<int, Pregunta>();
-
-                    while (dr.Read())
-                    {
-                        int idPregunta = Convert.ToInt32(dr["IdPregunta"]);
-
-                        if (!mapPreguntas.ContainsKey(idPregunta))
-                        {
-                            mapPreguntas[idPregunta] = new Pregunta
-                            {
-                                IdPregunta = idPregunta,
-                                Texto = dr["Texto"].ToString(),
-                                Respuestas = new List<Respuesta>()
-                            };
-                        }
-
-                        mapPreguntas[idPregunta].Respuestas.Add(new Respuesta
-                        {
-                            IdRespuesta = Convert.ToInt32(dr["IdRespuesta"]),
-                            Texto = dr["RespuestaTexto"].ToString(),
-                            EsCorrecta = Convert.ToBoolean(dr["EsCorrecta"])
-                        });
-                    }
-
-                    preguntas.AddRange(mapPreguntas.Values);
-                }
+                string query = "SELECT nombre FROM categoria";
+                categorias = connection.Query<categoria>(query).ToList();
             }
-
-            return preguntas;
+            return categorias; 
         }
-    }
-    public class Pregunta
-    {
-        public int IdPregunta { get; set; }
-        public string Texto { get; set; }
-        public List<Respuesta> Respuestas { get; set; }
+
+        public List<dificultad> ObtenerDificultades()
+        {
+            List<dificultad> dificultades = new List<dificultad>();
+                using(SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    string query = "SELECT nombre FROM dificultades";
+                    dificultades = connection.Query<dificultad>(query).ToList();
+                }
+                return dificultades; 
+        }
+
+        public List<pregunta> ObtenerPreguntas(int dificultad, int categoria)
+        {
+            List<pregunta> preguntas = new List<pregunta>();
+            using(SqlConnection connection = new SqlConnection(_connectionString))
+                {   
+                    //Arreglar este error (antes de traerlo tiene que tener los where)
+                    string query = "SELECT enunciado FROM preguntas";
+                    preguntas = connection.Query<pregunta>(query).ToList();
+                    if(dificultad == -1){
+                        string query = "SELECT preguntas.enunciado, dificultades.nombre FROM preguntas INNER JOIN dificultades ON preguntas.idDificultad = dificultades.idDificultad ";
+                    }
+                }
+            return preguntas; 
+        }
+
+
+     
+
     }
 
-    public class Respuesta
-    {
-        public int IdRespuesta { get; set; }
-        public string Texto { get; set; }
-        public bool EsCorrecta { get; set; }
-    }
+  
 }
