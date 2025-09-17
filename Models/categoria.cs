@@ -3,7 +3,7 @@ class categoria{
     public string nombre {get;set;}
     public string foto {get;set;}
 
-    public static categoria(int idCategoria, string nombre, string foto){
+    public categoria(int idCategoria, string nombre, string foto){
         this.idCategoria = idCategoria;
         this.nombre = nombre;
         this.foto = foto;

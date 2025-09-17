@@ -5,8 +5,7 @@ class pregunta{
     public string enunciado{get;set;}
     public string foto{get;set;}
     
-
-
+ 
 
 
 
