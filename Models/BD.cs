@@ -8,31 +8,31 @@ using System.Linq;
     {
         private static string connectionString = @"Server=(localdb)\MSSQLLocalDB;Database=PreguntadosDB;Trusted_Connection=True;";
 
-        public static List<categoria> ObtenerCategorias()
+        public static List<Categoria> ObtenerCategorias()
         {
-            List<categoria> categorias = new List<categoria>();
+            List<Categoria> categorias = new List<Categoria>();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string query = "SELECT nombre FROM categoria";
-                categorias = connection.Query<categoria>(query).ToList();
+                categorias = connection.Query<Categoria>(query).ToList();
             }
             return categorias;
         }
 
-        public static List<dificultad> ObtenerDificultades()
+        public static List<Dificultad> ObtenerDificultades()
         {
-            List<dificultad> dificultades = new List<dificultad>();
+            List<Dificultad> dificultades = new List<Dificultad>();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string query = "SELECT nombre FROM dificultades";
-                dificultades = connection.Query<dificultad>(query).ToList();
+                dificultades = connection.Query<Dificultad>(query).ToList();
             }
             return dificultades;
         }
 
-        public static List<pregunta> ObtenerPreguntas(int dificultad, int categoria)
+        public static List<Pregunta> ObtenerPreguntas(int dificultad, int categoria)
         {
-            List<pregunta> preguntas = new List<pregunta>();
+            List<Pregunta> preguntas = new List<Pregunta>();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string query = "SELECT enunciado FROM preguntas";
@@ -44,37 +44,37 @@ using System.Linq;
                 else if (dificultad == -1)
                 {
                     query = "SELECT * FROM preguntas WHERE idCategoria = @categoria";
-                    preguntas = connection.Query<pregunta>(query, new { categoria }).ToList();
+                    preguntas = connection.Query<Pregunta>(query, new { categoria }).ToList();
                     return preguntas;
                 }
                 else if (categoria == -1)
                 {
                     query = "SELECT * FROM preguntas WHERE idDificultad = @dificultad";
-                    preguntas = connection.Query<pregunta>(query, new { dificultad }).ToList();
+                    preguntas = connection.Query<Pregunta>(query, new { dificultad }).ToList();
                     return preguntas;
                 }
                 else
                 {
                     query = "SELECT * FROM preguntas WHERE idCategoria = @categoria AND idDificultad = @dificultad";
-                    preguntas = connection.Query<pregunta>(query, new { dificultad, categoria }).ToList();
+                    preguntas = connection.Query<Pregunta>(query, new { dificultad, categoria }).ToList();
                 }
 
-                preguntas = connection.Query<pregunta>(query, new { dificultad, categoria }).ToList();
+                preguntas = connection.Query<Pregunta>(query, new { dificultad, categoria }).ToList();
             }
             return preguntas;
         }
 
-        public static List<respuesta> ObtenerRespuestas(int idPregunta)
+        public static List<Respuesta> ObtenerRespuestas(int idPregunta)
         {
-            List<respuesta> respuestas = new List<respuesta>();
+            List<Respuesta> respuestas = new List<Respuesta>();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string query = "SELECT * FROM respuestas WHERE idPregunta = @idPregunta";
-                respuestas = connection.Query<respuesta>(query, new { idPregunta }).ToList();
+                respuestas = connection.Query<Respuesta>(query, new { idPregunta }).ToList();
             }
             return respuestas;
         }
         
+        
 
-    }
-
+}

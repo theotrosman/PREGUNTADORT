@@ -1,44 +1,84 @@
 class Juego
 {
     public string username { get; set; }
-    public int puntuajeActual { get; set; }
+    public int puntajeActual { get; set; }
     public int CantidadPreguntasCorrectas { get; set; }
     public int ContadorNroPreguntaActual { get; set; }
     public pregunta preguntaActual { get; set; }
-    public List<pregunta> ListaPreguntas { get; set; }
-    public List<respuesta> ListaRespuestas { get; set; }
+    public List<Pregunta> ListaPreguntas { get; set; }
+    public List<Respuesta> ListaRespuestas { get; set; }
 
-    public Juego(string username, int puntuajeActual, int CantidadPreguntasCorrectas, int ContadorNroPreguntaActual)
+    public Juego(string username, int puntajeActual, int CantidadPreguntasCorrectas, int ContadorNroPreguntaActual)
     {
         this.username = username;
-        this.puntuajeActual = puntuajeActual;
+        this.puntajeActual = puntajeActual;
         this.CantidadPreguntasCorrectas = CantidadPreguntasCorrectas;
         this.ContadorNroPreguntaActual = ContadorNroPreguntaActual;
     }
 
-    public void InicializarJuego(string username)
+    private void InicializarJuego(string username)
     {
-        if (username == null) { username = ""; };
-        puntuajeActual = 0;
+        username = ""; 
+        puntajeActual = 0;
         CantidadPreguntasCorrectas = 0;
         ContadorNroPreguntaActual = 0;
         preguntaActual = null;
         List<pregunta> ListaPreguntas = null;
         List<respuesta> ListaRespuestas = null;
     }
+
+    public List<Categoria>ObtenerCategorias()
+    {
+        List<Categoria> categorias = BD.ObtenerCategorias();
+        return categorias;
+    }
+    
+    public List<Dificultad>ObtenerDificultades()
+    {
+        List<Dificultad> dificultades = BD.ObtenerDificultades();
+        return dificultades; 
+    }
+
     public void CargarPartida(string username, int dificultad, int categoria)
     {
-        Juego juego = new Juego(username, puntuajeActual, CantidadPreguntasCorrectas, ContadorNroPreguntaActual);
+        Juego juego = new Juego(username, puntajeActual, CantidadPreguntasCorrectas, ContadorNroPreguntaActual);
         juego.InicializarJuego(username);
-        List<pregunta> preguntas = BD.ObtenerPreguntas(dificultad, categoria);
+        List<Pregunta> preguntas = BD.ObtenerPreguntas(dificultad, categoria);
     }
-    public void VerificarRespuesta(int idRespuesta)
+
+    public Pregunta ObtenerProximaPregunta() //CORREGIR ESTA FUNCIÓN 
     {
-        bool esCorrecta = foreach(respuesta respuesta in respuesta){respuesta.idPregunta == idRespuesta} ?? false;
+        Pregunta pregunta = null;
+        if(ListaPreguntas != null && ContadorNroPreguntaActual < ListaPreguntas.Count())
+        {
+            preguntaActual = ListaPreguntas[ContadorNroPreguntaActual];
+            pregunta = preguntaActual;
+        }
+        return pregunta;
     }
-    public void ObtenerProximaPregunta()
+
+    List<Respuesta>ObtenerProximasRespuestas(int idPregunta)
     {
-        preguntaActual = ListaPreguntas[ContadorNroPreguntaActual];
+        ListaRespuestas = BD.ObtenerRespuestas(idPregunta);
+        return ListaRespuestas;
     }
+
+    public bool VerificarRespuesta(int idRespuesta)
+    {
+        bool esCorrecta = false;
+        foreach(Respuesta respuesta in respuesta)
+        {
+            if(respuesta.idPregunta == idRespuesta)
+            {
+                esCorrecta = true;
+                puntajeActual+=2;
+                CantidadPreguntasCorrectas+=1;
+            }
+        } 
+        ContadorNroPreguntaActual+=1;
+        preguntaActual = ObtenerProximaPregunta;
+        return esCorrecta;
+    }
+
 
 }
