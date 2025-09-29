@@ -1,0 +1,46 @@
+@{
+    ViewData["Title"] = "Jugar";
+}
+
+<div class="juego-container">
+    <div class="info-jugador">
+        <h2>Jugador: @ViewBag.Username</h2>
+        <h3>Puntaje: <span id="puntaje">@ViewBag.PuntajeActual</span></h3>
+        <p>Pregunta @ViewBag.NumeroPregunta</p>
+    </div>
+
+    <div class="pregunta-container">
+        <h2 class="enunciado">@ViewBag.Pregunta.enunciado</h2>
+        
+        @if(!string.IsNullOrEmpty(ViewBag.Pregunta.foto))
+        {
+            <img src="@ViewBag.Pregunta.foto" alt="Imagen de la pregunta" class="foto-pregunta" />
+        }
+    </div>
+
+    <form asp-controller="Home" asp-action="VerificarRespuesta" method="post" class="respuestas-form">
+        <input type="hidden" name="idPregunta" value="@ViewBag.Pregunta.idPregunta" />
+        
+        <div class="respuestas-grid">
+            @foreach(var respuesta in ViewBag.Respuestas)
+            {
+                <div class="respuesta-item">
+                    <input type="radio" 
+                           id="respuesta_@respuesta.idRespuesta" 
+                           name="idRespuesta" 
+                           value="@respuesta.idRespuesta" 
+                           required />
+                    <label for="respuesta_@respuesta.idRespuesta">
+                        @if(!string.IsNullOrEmpty(respuesta.foto))
+                        {
+                            <img src="@respuesta.foto" alt="@respuesta.contenido" class="foto-respuesta" />
+                        }
+                        <span>@respuesta.contenido</span>
+                    </label>
+                </div>
+            }
+        </div>
+
+        <button type="submit" class="btn-responder">RESPONDER</button>
+    </form>
+</div>

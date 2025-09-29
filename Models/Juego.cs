@@ -1,7 +1,7 @@
 class Juego
 {
     public string username { get; set; }
-    public int puntajeActual { get; set; }
+    public int puntajeActual { get;  set; }
     public int CantidadPreguntasCorrectas { get; set; }
     public int ContadorNroPreguntaActual { get; set; }
     public pregunta preguntaActual { get; set; }
@@ -46,7 +46,7 @@ class Juego
         List<Pregunta> preguntas = BD.ObtenerPreguntas(dificultad, categoria);
     }
 
-    public Pregunta ObtenerProximaPregunta() //CORREGIR ESTA FUNCIÓN 
+    public Pregunta ObtenerProximaPregunta()
     {
         Pregunta pregunta = null;
         if(ListaPreguntas != null && ContadorNroPreguntaActual < ListaPreguntas.Count())
@@ -72,10 +72,10 @@ class Juego
             {
                 esCorrecta = true;
                 puntajeActual+=2;
-                CantidadPreguntasCorrectas+=1;
+                CantidadPreguntasCorrectas++;
             }
         } 
-        ContadorNroPreguntaActual+=1;
+        ContadorNroPreguntaActual++;
         preguntaActual = ObtenerProximaPregunta;
         return esCorrecta;
     }

@@ -3,7 +3,6 @@ using Dapper;
 using System.Collections.Generic;
 using System.Linq;
 
-
     public class BD
     {
         private static string connectionString = @"Server=(localdb)\MSSQLLocalDB;Database=PreguntadosDB;Trusted_Connection=True;";
@@ -74,7 +73,4 @@ using System.Linq;
             }
             return respuestas;
         }
-        
-        
-
 }

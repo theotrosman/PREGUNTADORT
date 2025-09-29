@@ -21,29 +21,46 @@ public class HomeController : Controller
     {
         ViewBag.categorias;
         ViewBag.dificultades;
-        return View("ConfigurarJuego"); //PASAR LAS VIEWBAG DE CATEGORIAS Y DIFICULTADES EN LA VIEW Y ESO
+        return View("ConfigurarJuego");
     }
-
     public IActionResult Comenzar(string username, int dificultad, int categoria)
     {
-        /*
-        Recibe el username, dificultad y categoría elegidas por el usuario, invoca al método CargarPartida de la clase Juego y se dirige a la acción Jugar.
-Ayuda: return RedirectToAction(“Jugar”);
-*/
+        juegoActual = new Juego(username, 0, 0, 0);
+        juegoActual.CargarPartida(username, dificultad, categoria);
+        return RedirectToAction("Jugar");
     }
     public IActionResult Jugar()
     {
-        /*
-        Carga en ViewBag todo lo necesario para mostrar la pregunta actual con sus respectivas respuestas (que proviene del método ObtenerProximaPregunta. 
-        Si ya no hay más preguntas disponibles, retorna la view Fin. 
-        Si el método retorna una pregunta, invoca a ObtenerProximasRespuestas de la clase Juego guardando estos datos en ViewBag y retorna la view Juego.
-        */
+        if (juegoActual == null)
+        {
+            return RedirectToAction("ConfigurarJuego");
+        }
+        Pregunta pregunta = juegoActual.ObtenerProximaPregunta();
+        if (pregunta == null)
+        {
+            return View("Fin", new { puntaje = juegoActual.puntajeActual });
+        }
+
+        List<Respuesta> respuestas = juegoActual.ObtenerProximasRespuestas(pregunta.idPregunta);
+
+        ViewBag.Pregunta = pregunta;
+        ViewBag.Respuestas = respuestas;
+        return View("Jugar");
     }
+
+    
     [HttpPost] public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta)
     {
-        /*
-        Recibe el id de la respuesta elegida, invoca al método VerificarRespuesta de la clase Juego y retorna la view Respuesta, enviando por ViewBag si fue correcta o no. 
-        (Como opcional, podés enviar también cuál era la respuesta correcta).
-        */
+        if (juegoActual == null)
+            return RedirectToAction("ConfigurarJuego");
+
+        bool esCorrecta = juegoActual.VerificarRespuesta(idRespuesta);
+
+        ViewBag.EsCorrecta = esCorrecta;
+
+        todas = juegoActual.ListaRespuestas;
+        ViewBag.RespuestaCorrecta = correcta?.texto;
+
+        return View("Respuesta");
     }
 }
