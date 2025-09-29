@@ -31,6 +31,7 @@ public class HomeController : Controller
     }
     public IActionResult Jugar()
     {
+        Juego juegoActual;
         if (juegoActual == null)
         {
             return RedirectToAction("ConfigurarJuego");

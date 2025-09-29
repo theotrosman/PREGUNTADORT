@@ -76,3 +76,15 @@ C:\Users\49092919\Downloads\PREGUNTADORT\PREGUNTADORT\obj\Debug\net8.0\refint\Pr
 C:\Users\49092919\Downloads\PREGUNTADORT\PREGUNTADORT\obj\Debug\net8.0\PrimerProyecto.pdb
 C:\Users\49092919\Downloads\PREGUNTADORT\PREGUNTADORT\obj\Debug\net8.0\PrimerProyecto.genruntimeconfig.cache
 C:\Users\49092919\Downloads\PREGUNTADORT\PREGUNTADORT\obj\Debug\net8.0\ref\PrimerProyecto.dll
+C:\Users\48793668\Downloads\as\PREGUNTADORT\obj\Debug\net8.0\PrimerProyecto.csproj.AssemblyReference.cache
+C:\Users\48793668\Downloads\as\PREGUNTADORT\obj\Debug\net8.0\PrimerProyecto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\48793668\Downloads\as\PREGUNTADORT\obj\Debug\net8.0\PrimerProyecto.AssemblyInfoInputs.cache
+C:\Users\48793668\Downloads\as\PREGUNTADORT\obj\Debug\net8.0\PrimerProyecto.AssemblyInfo.cs
+C:\Users\48793668\Downloads\as\PREGUNTADORT\obj\Debug\net8.0\PrimerProyecto.csproj.CoreCompileInputs.cache
+C:\Users\48793668\Downloads\as\PREGUNTADORT\obj\Debug\net8.0\PrimerProyecto.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\48793668\Downloads\as\PREGUNTADORT\obj\Debug\net8.0\PrimerProyecto.RazorAssemblyInfo.cache
+C:\Users\48793668\Downloads\as\PREGUNTADORT\obj\Debug\net8.0\PrimerProyecto.RazorAssemblyInfo.cs
+C:\Users\48793668\Downloads\as\PREGUNTADORT\obj\Debug\net8.0\PrimerProyecto.sourcelink.json
+C:\Users\48793668\Downloads\as\PREGUNTADORT\obj\Debug\net8.0\PrimerProyecto.dll
+C:\Users\48793668\Downloads\as\PREGUNTADORT\obj\Debug\net8.0\refint\PrimerProyecto.dll
+C:\Users\48793668\Downloads\as\PREGUNTADORT\obj\Debug\net8.0\PrimerProyecto.pdb

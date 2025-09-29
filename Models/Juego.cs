@@ -4,7 +4,7 @@ class Juego
     public int puntajeActual { get;  set; }
     public int CantidadPreguntasCorrectas { get; set; }
     public int ContadorNroPreguntaActual { get; set; }
-    public pregunta preguntaActual { get; set; }
+    public Pregunta preguntaActual { get; set; }
     public List<Pregunta> ListaPreguntas { get; set; }
     public List<Respuesta> ListaRespuestas { get; set; }
 
@@ -23,8 +23,8 @@ class Juego
         CantidadPreguntasCorrectas = 0;
         ContadorNroPreguntaActual = 0;
         preguntaActual = null;
-        List<pregunta> ListaPreguntas = null;
-        List<respuesta> ListaRespuestas = null;
+        List<Pregunta> ListaPreguntas = null;
+        List<Respuesta> ListaRespuestas = null;
     }
 
     public List<Categoria>ObtenerCategorias()
