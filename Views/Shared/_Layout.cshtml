@@ -1,18 +1,18 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - NombreProyecto</title>
+    <title>@ViewData["Title"] - Bink</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
-
 <body>
     <header>
-        <img src="PREGUNTADORT\wwwroot\Img\Logo.png" alt="Logo" href="@ViewBag("Index")">
+        <a asp-controller="Home" asp-action="Index">
+            <img src="~/Img/Logo.png" alt="Logo">
+        </a>
         <div>
-            <a href="@ViewBag("ConfigurarJuego")">JUGAR</a>
+            <a asp-controller="Home" asp-action="ConfigurarJuego">JUGAR</a>
         </div>
     </header>
 
@@ -27,6 +27,5 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-</body>
-
+a</body>
 </html>

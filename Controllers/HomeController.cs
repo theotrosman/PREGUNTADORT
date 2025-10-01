@@ -7,6 +7,7 @@ namespace PrimerProyecto.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private Juego? juegoActual;
 
     public HomeController(ILogger<HomeController> logger)
     {
@@ -15,28 +16,31 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View("Index.html");
+        return View("Index");
     }
+    
     public IActionResult ConfigurarJuego()
     {
-        ViewBag.categorias;
-        ViewBag.dificultades;
+        ViewBag.Categorias = BD.ObtenerCategorias();
+        ViewBag.Dificultades = BD.ObtenerDificultades();
         return View("ConfigurarJuego");
     }
+    
     public IActionResult Comenzar(string username, int dificultad, int categoria)
     {
         juegoActual = new Juego(username, 0, 0, 0);
         juegoActual.CargarPartida(username, dificultad, categoria);
         return RedirectToAction("Jugar");
     }
+    
     public IActionResult Jugar()
     {
-        Juego juegoActual;
         if (juegoActual == null)
         {
             return RedirectToAction("ConfigurarJuego");
         }
-        Pregunta pregunta = juegoActual.ObtenerProximaPregunta();
+        
+        Pregunta? pregunta = juegoActual.ObtenerProximaPregunta();
         if (pregunta == null)
         {
             return View("Fin", new { puntaje = juegoActual.puntajeActual });
@@ -49,8 +53,8 @@ public class HomeController : Controller
         return View("Jugar");
     }
 
-    
-    [HttpPost] public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta)
+    [HttpPost] 
+    public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta)
     {
         if (juegoActual == null)
             return RedirectToAction("ConfigurarJuego");
@@ -58,9 +62,10 @@ public class HomeController : Controller
         bool esCorrecta = juegoActual.VerificarRespuesta(idRespuesta);
 
         ViewBag.EsCorrecta = esCorrecta;
-
-        todas = juegoActual.ListaRespuestas;
-        ViewBag.RespuestaCorrecta = correcta?.texto;
+    
+        List<Respuesta> todas = juegoActual.ListaRespuestas;
+        Respuesta? correcta = todas.FirstOrDefault(r => r.correcta);
+        ViewBag.RespuestaCorrecta = correcta?.contenido;
 
         return View("Respuesta");
     }
