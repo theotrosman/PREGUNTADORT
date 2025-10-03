@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "H56n4sDERF29VksBrAO+MN2a0rgEj29dBSsrrFR+6CL9wi5zg4Po5WGry0X3lvYdR48YO94iCVrC3rwnniW/lA==",
+  "dgSpecHash": "5G0hpFmMRJIrFAIe5oYV6xUgfX//nbG3WIbHns3X+5jUAU2co3Ha3nhinfiCnKihhFoZLduHNYkcU5+ENKriog==",
   "success": true,
-  "projectFilePath": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\PrimerProyecto.csproj",
+  "projectFilePath": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\PrimerProyecto.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\48793668\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\48793668\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",

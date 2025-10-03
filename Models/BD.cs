@@ -1,76 +1,66 @@
-using Microsoft.Data.SqlClient;
-using Dapper;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using Dapper;
+using Microsoft.Data.SqlClient;
 
-    public class BD
+public static class BD
+{
+    // Ajustá el nombre del server si no usás LocalDB.
+    private const string connectionString =
+        @"Server=(localdb)\MSSQLLocalDB;Database=PreguntadosDB;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true";
+
+    private static IDbConnection GetConnection() => new SqlConnection(connectionString);
+
+    public static List<Categoria> ObtenerCategorias()
     {
-        private static string connectionString = @"Server=(localdb)\MSSQLLocalDB;Database=PreguntadosDB;Trusted_Connection=True;";
+        using var connection = GetConnection();
+        connection.Open();
+        const string sql = "SELECT * FROM categoria";
+        return connection.Query<Categoria>(sql).ToList();
+    }
 
-        public static List<Categoria> ObtenerCategorias()
+    public static List<Dificultad> ObtenerDificultades()
+    {
+        using var connection = GetConnection();
+        connection.Open();
+        const string sql = "SELECT * FROM dificultades";
+        return connection.Query<Dificultad>(sql).ToList();
+    }
+
+    public static List<Pregunta> ObtenerPreguntas(int dificultad, int categoria)
+    {
+        using var connection = GetConnection();
+        connection.Open();
+
+        // Construcción dinámica de WHERE
+        var condiciones = new List<string>();
+        var parametros = new DynamicParameters();
+
+        if (categoria != -1)
         {
-            List<Categoria> categorias = new List<Categoria>();
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string query = "SELECT nombre FROM categoria";
-                categorias = connection.Query<Categoria>(query).ToList();
-            }
-            return categorias;
+            condiciones.Add("idCategoria = @categoria");
+            parametros.Add("categoria", categoria);
         }
 
-        public static List<Dificultad> ObtenerDificultades()
+        if (dificultad != -1)
         {
-            List<Dificultad> dificultades = new List<Dificultad>();
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string query = "SELECT nombre FROM dificultades";
-                dificultades = connection.Query<Dificultad>(query).ToList();
-            }
-            return dificultades;
+            condiciones.Add("idDificultad = @dificultad");
+            parametros.Add("dificultad", dificultad);
         }
 
-        public static List<Pregunta> ObtenerPreguntas(int dificultad, int categoria)
-        {
-            List<Pregunta> preguntas = new List<Pregunta>();
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string query = "SELECT enunciado FROM preguntas";
+        var sql = "SELECT * FROM preguntas";
+        if (condiciones.Any())
+            sql += " WHERE " + string.Join(" AND ", condiciones);
 
-                if (dificultad == -1 && categoria == -1)
-                {
-                    query = "SELECT * FROM preguntas";
-                }
-                else if (dificultad == -1)
-                {
-                    query = "SELECT * FROM preguntas WHERE idCategoria = @categoria";
-                    preguntas = connection.Query<Pregunta>(query, new { categoria }).ToList();
-                    return preguntas;
-                }
-                else if (categoria == -1)
-                {
-                    query = "SELECT * FROM preguntas WHERE idDificultad = @dificultad";
-                    preguntas = connection.Query<Pregunta>(query, new { dificultad }).ToList();
-                    return preguntas;
-                }
-                else
-                {
-                    query = "SELECT * FROM preguntas WHERE idCategoria = @categoria AND idDificultad = @dificultad";
-                    preguntas = connection.Query<Pregunta>(query, new { dificultad, categoria }).ToList();
-                }
+        return connection.Query<Pregunta>(sql, parametros).ToList();
+    }
 
-                preguntas = connection.Query<Pregunta>(query, new { dificultad, categoria }).ToList();
-            }
-            return preguntas;
-        }
-
-        public static List<Respuesta> ObtenerRespuestas(int idPregunta)
-        {
-            List<Respuesta> respuestas = new List<Respuesta>();
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string query = "SELECT * FROM respuestas WHERE idPregunta = @idPregunta";
-                respuestas = connection.Query<Respuesta>(query, new { idPregunta }).ToList();
-            }
-            return respuestas;
-        }
+    public static List<Respuesta> ObtenerRespuestas(int idPregunta)
+    {
+        using var connection = GetConnection();
+        connection.Open();
+        const string sql = "SELECT * FROM respuestas WHERE idPregunta = @idPregunta";
+        return connection.Query<Respuesta>(sql, new { idPregunta }).ToList();
+    }
 }

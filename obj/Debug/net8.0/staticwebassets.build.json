@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lI2lPY007Db0cskU4cJ7VkD9vuj/FLqXl14fQeUP8tQ=",
+  "Hash": "fSSRz65pkyLgHB4ccLeZT4yNuOmbAXj15xcaSI5zFKY=",
   "Source": "PrimerProyecto",
   "BasePath": "_content/PrimerProyecto",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "PrimerProyecto\\wwwroot",
       "Source": "PrimerProyecto",
-      "ContentRoot": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\css\\site.css",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\favicon.ico",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\Img\\Logo.png",
+      "Identity": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\Img\\Logo.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "Img/Logo.png",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\Img\\Logo.png"
     },
     {
-      "Identity": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\js\\site.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -302,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48793668\\Downloads\\asdf\\PREGUNTADORT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48793668\\Downloads\\fdsf\\PREGUNTADORT\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
