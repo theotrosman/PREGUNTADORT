@@ -2,11 +2,11 @@
     ViewData["Title"] = "Jugar";
 }
 
-<div class="juego-container">
+<div class="juego-container fadeInUp">
     <div class="info-jugador">
-        <h2>Jugador: @ViewBag.Username</h2>
-        <h3>Puntaje: <span id="puntaje">@ViewBag.PuntajeActual</span></h3>
-        <p>Pregunta @ViewBag.NumeroPregunta</p>
+        <h2>👤 Jugador: @ViewBag.Username</h2>
+        <h3>🏆 Puntaje: <span id="puntaje">@ViewBag.PuntajeActual</span></h3>
+        <p>📝 Pregunta @ViewBag.NumeroPregunta</p>
     </div>
 
     <div class="pregunta-container">
@@ -41,6 +41,6 @@
             }
         </div>
 
-        <button type="submit" class="btn-responder">RESPONDER</button>
+        <button type="submit" class="btn-responder">✅ RESPONDER</button>
     </form>
 </div>

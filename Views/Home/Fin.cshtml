@@ -1,5 +1,26 @@
-<h1>Jugador @ViewBag.Username<h1>
-//hacer el puntaje Final
-<h2>Puntaje Final @ViewBag.PuntajeFinal</h2>
-<a asp-controller="Home" asp-action="Juego">VOLVER A JUGAR</a>
+@{
+    ViewData["Title"] = "Fin del Juego";
+}
+
+<div class="fin-container fadeInUp">
+    <h1>🎉 ¡Juego Terminado!</h1>
+    
+    <div class="resultados">
+        <h2>👤 Jugador: @ViewBag.Username</h2>
+        
+        <div class="puntaje-final">
+            <h3>🏆 Puntaje Final</h3>
+            <div class="puntaje-numero">@ViewBag.PuntajeFinal</div>
+        </div>
+        
+        <div class="preguntas-correctas">
+            📊 Preguntas correctas: @ViewBag.CantidadPreguntasCorrectas
+        </div>
+    </div>
+    
+    <div class="acciones">
+        <a asp-controller="Home" asp-action="ConfigurarJuego" class="btn-volver">🔄 JUGAR DE NUEVO</a>
+        <a asp-controller="Home" asp-action="Index" class="btn-inicio">🏠 IR AL INICIO</a>
+    </div>
+</div>
 

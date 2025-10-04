@@ -2,21 +2,21 @@
     ViewData["Title"] = "Configurar Juego";
 }
 
-<div class="configurar-container">
+<div class="configurar-container fadeInUp">
     <h1>Configurar Partida</h1>
     
     <form asp-controller="Home" asp-action="Comenzar" method="get" class="form-configurar">
         
         <div class="form-group">
             <label for="username">Nombre de Usuario:</label>
-            <input type="text" id="username" name="username" required placeholder="Ingresa tu nombre" />
+            <input type="text" id="username" name="username" required placeholder="Ingresa tu nombre de jugador" />
         </div>
 
         <div class="form-group">
             <label>Selecciona la Dificultad:</label>
             <select name="dificultad" required>
-                <option value="">-- Selecciona --</option>
-                <option value="-1">Todas las dificultades</option>
+                <option value="">-- Selecciona una dificultad --</option>
+                <option value="-1">🎯 Todas las dificultades</option>
                 @foreach(var dif in ViewBag.Dificultades)
                 {
                     <option value="@dif.idDificultad">@dif.Nombre</option>
@@ -27,15 +27,15 @@
         <div class="form-group">
             <label>Selecciona la Categoría:</label>
             <select name="categoria" required>
-                <option value="">-- Selecciona --</option>
-                <option value="-1">Todas las categorías</option>
+                <option value="">-- Selecciona una categoría --</option>
+                <option value="-1">🎲 Todas las categorías</option>
                 @foreach(var cat in ViewBag.Categorias)
                 {
                     <option value="@cat.idCategoria">@cat.nombre</option>
                 }
             </select>
         </div>
-        //CHECK
-        <button type="submit" class="Comenzar" action="Juego">COMENZAR A JUGAR</button>
+        
+        <button type="submit" class="btn-comenzar">🚀 COMENZAR A JUGAR</button>
     </form>
 </div>

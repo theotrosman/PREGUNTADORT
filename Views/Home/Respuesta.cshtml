@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Respuesta";
+}
+
+<div class="respuesta-container fadeInUp">
+    <div class="resultado @(ViewBag.Correcta ? "correcto" : "incorrecto")">
+        <h1>@(ViewBag.Correcta ? "✅ ¡Correcto!" : "❌ ¡Incorrecto!")</h1>
+        <div class="mensaje">
+            @if(ViewBag.Correcta)
+            {
+                <p>¡Excelente! Has respondido correctamente.</p>
+            }
+            else
+            {
+                <p>No te preocupes, sigue intentando.</p>
+            }
+        </div>
+        
+        @if(!ViewBag.Correcta && !string.IsNullOrEmpty(ViewBag.RespuestaCorrecta))
+        {
+            <div class="respuesta-correcta">
+                La respuesta correcta era: @ViewBag.RespuestaCorrecta
+            </div>
+        }
+    </div>
+    
+    <a asp-controller="Home" asp-action="Jugar" class="btn-siguiente">
+        @(ViewBag.Correcta ? "➡️ SIGUIENTE PREGUNTA" : "➡️ CONTINUAR")
+    </a>
+</div>

@@ -3,16 +3,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Bink</title>
+    <title>@ViewData["Title"] - PreguntadOrt</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="icon" href="~/favicon.ico" />
 </head>
 <body>
     <header>
-        <a asp-controller="Home" asp-action="Index">
-            <img src="~/Img/Logo.png" alt="Logo">
-        </a>
-        <div>
-            <a asp-controller="Home" asp-action="ConfigurarJuego">JUGAR</a>
+        <div class="container">
+            <a asp-controller="Home" asp-action="Index">
+                <img src="~/Img/Logo.png" alt="PreguntadOrt Logo" class="logo">
+            </a>
+            <div class="nav-links">
+                <a asp-controller="Home" asp-action="ConfigurarJuego" class="btn-jugar">JUGAR</a>
+            </div>
         </div>
     </header>
 
@@ -21,11 +24,11 @@
     </main>
 
     <footer>
-        &copy; @DateTime.Now.Year - NombreProyecto
+        <p>&copy; @DateTime.Now.Year - PreguntadOrt - Juego de Preguntas y Respuestas</p>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-a</body>
+</body>
 </html>
