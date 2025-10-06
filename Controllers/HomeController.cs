@@ -1,6 +1,5 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using PrimerProyecto.Models;
 
 namespace PrimerProyecto.Controllers;
 
@@ -40,13 +39,13 @@ public class HomeController : Controller
             return RedirectToAction("ConfigurarJuego");
         }
         
-        Pregunta? pregunta = juegoActual.ObtenerProximaPregunta();
+        Preguntas? pregunta = juegoActual.ObtenerProximaPregunta();
         if (pregunta == null)
         {
             return View("Fin", new { puntaje = juegoActual.puntajeActual });
         }
 
-        List<Respuesta> respuestas = juegoActual.ObtenerProximasRespuestas(pregunta.idPregunta);
+        List<Respuestas> respuestas = juegoActual.ObtenerProximasRespuestas(pregunta.idPregunta);
 
         ViewBag.Pregunta = pregunta;
         ViewBag.Respuestas = respuestas;
@@ -63,8 +62,8 @@ public class HomeController : Controller
 
         ViewBag.EsCorrecta = esCorrecta;
     
-        List<Respuesta> todas = juegoActual.ListaRespuestas;
-        Respuesta? correcta = todas.FirstOrDefault(r => r.correcta);
+        List<Respuestas> todas = juegoActual.ListaRespuestas;
+        Respuestas? correcta = todas.FirstOrDefault(r => r.correcta);
         ViewBag.RespuestaCorrecta = correcta?.contenido;
 
         return View("Respuesta");

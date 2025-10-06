@@ -1,14 +1,12 @@
-using PrimerProyecto.Models;
-
 public class Juego
 {
     public string username { get; set; }
     public int puntajeActual { get; set; }
     public int CantidadPreguntasCorrectas { get; set; }
     public int ContadorNroPreguntaActual { get; set; }
-    public Pregunta? preguntaActual { get; set; }
-    public List<Pregunta> ListaPreguntas { get; set; }
-    public List<Respuesta> ListaRespuestas { get; set; }
+    public Preguntas? preguntaActual { get; set; }
+    public List<Preguntas> ListaPreguntas { get; set; }
+    public List<Respuestas> ListaRespuestas { get; set; }
 
     public Juego(string username, int puntajeActual, int CantidadPreguntasCorrectas, int ContadorNroPreguntaActual)
     {
@@ -16,8 +14,8 @@ public class Juego
         this.puntajeActual = puntajeActual;
         this.CantidadPreguntasCorrectas = CantidadPreguntasCorrectas;
         this.ContadorNroPreguntaActual = ContadorNroPreguntaActual;
-        this.ListaPreguntas = new List<Pregunta>();
-        this.ListaRespuestas = new List<Respuesta>();
+        this.ListaPreguntas = new List<Preguntas>();
+        this.ListaRespuestas = new List<Respuestas>();
     }
 
     private void InicializarJuego()
@@ -27,19 +25,19 @@ public class Juego
         CantidadPreguntasCorrectas = 0;
         ContadorNroPreguntaActual = 0;
         preguntaActual = null;
-        ListaPreguntas = new List<Pregunta>();
-        ListaRespuestas = new List<Respuesta>();
+        ListaPreguntas = new List<Preguntas>();
+        ListaRespuestas = new List<Respuestas>();
     }
 
-    public List<Categoria> ObtenerCategorias()
+    public List<Categorias> ObtenerCategorias()
     {
-        List<Categoria> categorias = BD.ObtenerCategorias();
+        List<Categorias> categorias = BD.ObtenerCategorias();
         return categorias;
     }
     
-    public List<Dificultad> ObtenerDificultades()
+    public List<Dificultades> ObtenerDificultades()
     {
-        List<Dificultad> dificultades = BD.ObtenerDificultades();
+        List<Dificultades> dificultades = BD.ObtenerDificultades();
         return dificultades; 
     }
 
@@ -50,7 +48,7 @@ public class Juego
         ListaPreguntas = BD.ObtenerPreguntas(dificultad, categoria);
     }
 
-    public Pregunta? ObtenerProximaPregunta()
+    public Preguntas? ObtenerProximaPregunta()
     {
         if(ListaPreguntas != null && ContadorNroPreguntaActual < ListaPreguntas.Count)
         {
@@ -61,7 +59,7 @@ public class Juego
         return null;
     }
 
-    public List<Respuesta> ObtenerProximasRespuestas(int idPregunta)
+    public List<Respuestas> ObtenerProximasRespuestas(int idPregunta)
     {
         ListaRespuestas = BD.ObtenerRespuestas(idPregunta);
         return ListaRespuestas;
@@ -70,7 +68,7 @@ public class Juego
     public bool VerificarRespuesta(int idRespuesta)
     {
         bool esCorrecta = false;
-        foreach(Respuesta respuesta in ListaRespuestas)
+        foreach(Respuestas respuesta in ListaRespuestas)
         {
             if(respuesta.idRespuesta == idRespuesta && respuesta.correcta)
             {

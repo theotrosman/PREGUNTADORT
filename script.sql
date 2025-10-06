@@ -28,48 +28,48 @@ VALUES ('admin', HASHBYTES('adminmvc', 'adminmvc'))
 GO
 
 /****** Crear tablas del juego ******/
-CREATE TABLE [dbo].[Categorias](
+CREATE TABLE [dbo].[Categoria](
     [CategoriaId] [int] IDENTITY(1,1) NOT NULL,
       NOT NULL,
  CONSTRAINT [PK_Categorias] PRIMARY KEY CLUSTERED ([CategoriaId] ASC)
 ) ON [PRIMARY]
 GO
 
-CREATE TABLE [dbo].[Dificultades](
+CREATE TABLE [dbo].[Dificultad](
     [DificultadId] [int] IDENTITY(1,1) NOT NULL,
       NOT NULL,
  CONSTRAINT [PK_Dificultades] PRIMARY KEY CLUSTERED ([DificultadId] ASC)
 ) ON [PRIMARY]
 GO
 
-CREATE TABLE [dbo].[Preguntas](
+CREATE TABLE [dbo].[Pregunta](
     [PreguntaId] [int] IDENTITY(1,1) NOT NULL,
       NOT NULL,
     [CategoriaId] [int] NOT NULL,
     [DificultadId] [int] NOT NULL,
- CONSTRAINT [PK_Preguntas] PRIMARY KEY CLUSTERED ([PreguntaId] ASC)
+ CONSTRAINT [PK_Pregunta] PRIMARY KEY CLUSTERED ([PreguntaId] ASC)
 ) ON [PRIMARY]
 GO
 
-CREATE TABLE [dbo].[Respuestas](
+CREATE TABLE [dbo].[Respuesta](
     [RespuestaId] [int] IDENTITY(1,1) NOT NULL,
     [PreguntaId] [int] NOT NULL,
       NOT NULL,
     [EsCorrecta] [bit] NOT NULL,
- CONSTRAINT [PK_Respuestas] PRIMARY KEY CLUSTERED ([RespuestaId] ASC)
+ CONSTRAINT [PK_Respuesta] PRIMARY KEY CLUSTERED ([RespuestaId] ASC)
 ) ON [PRIMARY]
 GO
 
-ALTER TABLE [dbo].[Preguntas]  WITH CHECK ADD  CONSTRAINT [FK_Preguntas_Categorias] FOREIGN KEY([CategoriaId])
-REFERENCES [dbo].[Categorias] ([CategoriaId])
+ALTER TABLE [dbo].[Pregunta]  WITH CHECK ADD  CONSTRAINT [FK_Preguntas_Categorias] FOREIGN KEY([CategoriaId])
+REFERENCES [dbo].[Categoria] ([CategoriaId])
 GO
 
-ALTER TABLE [dbo].[Preguntas]  WITH CHECK ADD  CONSTRAINT [FK_Preguntas_Dificultades] FOREIGN KEY([DificultadId])
-REFERENCES [dbo].[Dificultades] ([DificultadId])
+ALTER TABLE [dbo].[Pregunta]  WITH CHECK ADD  CONSTRAINT [FK_Preguntas_Dificultades] FOREIGN KEY([DificultadId])
+REFERENCES [dbo].[Dificultade] ([DificultadId])
 GO
 
-ALTER TABLE [dbo].[Respuestas]  WITH CHECK ADD  CONSTRAINT [FK_Respuestas_Preguntas] FOREIGN KEY([PreguntaId])
-REFERENCES [dbo].[Preguntas] ([PreguntaId])
+ALTER TABLE [dbo].[Respuesta]  WITH CHECK ADD  CONSTRAINT [FK_Respuestas_Preguntas] FOREIGN KEY([PreguntaId])
+REFERENCES [dbo].[Pregunta] ([PreguntaId])
 GO
 
 /****** Habilitar cifrado transparente (TDE) ******/
